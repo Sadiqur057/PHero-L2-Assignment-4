@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const home = () => {
   return (
-    <div className='flex h-[calc(100vh-80px)] min-h-[600px] justify-center items-center dark:bg-slate-800'>
+    <div className='flex h-[calc(100vh-80px)] min-h-[600px] justify-center items-center'>
       <div className='mx-auto flex justify-center px-4 sm:px-6 lg:px-8'>
         <div className='text-center '>
           <h1 className='text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl'>
