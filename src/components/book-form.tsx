@@ -91,11 +91,12 @@ const BookForm = ({
         const res = await updateBook({ id, formData });
         console.log('Update response:', res);
         toast.success('Book updated successfully');
+        return navigate('/books');
       } else {
         await createBook(formData);
         toast.success('Book added successfully');
+        return navigate('/books');
       }
-      navigate('/books');
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
