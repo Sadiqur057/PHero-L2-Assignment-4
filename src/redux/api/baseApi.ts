@@ -5,7 +5,7 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://library-management-api11.vercel.app/api",
   }),
-  tagTypes: ["book"],
+  tagTypes: ["book", "summary"],
   endpoints: (builder) => ({
     getBooks: builder.query({
       query: ({ page = 1, limit = 10 }) => ({
@@ -35,7 +35,7 @@ export const baseApi = createApi({
         url: `/books/${bookId}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["book"],
+      invalidatesTags: ["book", "summary"],
     }),
     getBookById: builder.query({
       query: (id) => `/books/${id}`,
@@ -53,6 +53,7 @@ export const baseApi = createApi({
         url: "/borrow",
         params: { page, limit },
       }),
+      providesTags: ["summary"],
     }),
   }),
 });
