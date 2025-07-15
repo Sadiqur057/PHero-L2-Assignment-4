@@ -1,5 +1,5 @@
 export const genres = [
-  "ACTION",
+  "FICTION",
   "NON_FICTION",
   "SCIENCE",
   "HISTORY",
