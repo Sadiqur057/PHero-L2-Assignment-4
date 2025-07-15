@@ -86,9 +86,19 @@ const BookForm = ({ edit = false, id = null, data = null }: IBookFormProps) => {
       if (edit) {
         const res = await updateBook({ id, formData });
         console.log("Update response:", res);
+        // if (res?.error) {
+        //   console.log("Update error:", res.error);
+        //   if (res.error.data?.error?.errors) {
+        //     setErrors(res.error.data.error.errors);
+        //     return;
+        //   } else {
+        //     toast.error(res.error.data.message || "Failed to update book");
+        //     return;
+        //   }
+        // }
         if (res?.data?.success) {
           toast.success("Book updated successfully");
-          return navigate('/books');
+          return navigate("/books");
         }
       } else {
         const res = await createBook(formData);
@@ -148,6 +158,7 @@ const BookForm = ({ edit = false, id = null, data = null }: IBookFormProps) => {
             <Select
               name="genre"
               value={formData.genre}
+              key={formData.genre} 
               onValueChange={(value) =>
                 setFormData({ ...formData, genre: value })
               }
