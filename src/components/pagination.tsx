@@ -141,7 +141,7 @@ PaginationProps) => {
               size="icon"
               className={cn(
                 "h-8 w-8 lg:h-10 lg:w-10 border-border cursor-pointer rounded-[4px]",
-                currentPage === page ? "bg-primary text-white" : ""
+                currentPage === page ? "bg-primary text-white" : "text-light-80"
               )}
               onClick={() => onPageChange(page)}
             >
