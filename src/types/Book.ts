@@ -15,3 +15,11 @@ export interface IBook {
   available?: boolean;
   createdAt?: Date;
 }
+
+export interface IDoc {
+  book: {
+    title: string;
+    isbn: number;
+  },
+  totalQuantity: number;
+}
