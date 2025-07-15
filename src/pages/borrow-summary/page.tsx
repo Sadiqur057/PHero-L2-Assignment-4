@@ -29,7 +29,7 @@ const BorrowSummary = () => {
     limit: parseInt(itemsPerPage),
   });
   return (
-    <DataTable>
+    <DataTable className="bg-card">
       <DataTableHeading title="Borrow Summary" />
       {isLoading ? (
         <div className="flex items-center justify-center w-full h-full py-60">
