@@ -62,7 +62,7 @@ const BorrowBook = () => {
       }).unwrap();
       setFormData({ quantity: "", dueDate: "" });
       toast.success("Book borrowed successfully");
-      navigate("/books");
+      navigate("/borrow-summary");
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.log("Borrow book error:", error);
