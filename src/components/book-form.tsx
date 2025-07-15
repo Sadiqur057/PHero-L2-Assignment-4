@@ -123,7 +123,7 @@ const BookForm = ({ edit = false, id = null, data = null }: IBookFormProps) => {
   };
 
   return (
-    <div>
+    <div className="p-6 border bg-card rounded-lg custom-shadow">
       <h2 className="text-xl font-semibold mb-2">
         {edit ? "Edit Book" : "Add New Book"}
       </h2>
