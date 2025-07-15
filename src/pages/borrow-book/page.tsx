@@ -74,7 +74,8 @@ const BorrowBook = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="border rounded-lg p-6 bg-card custom-shadow h-fit">
         <h2 className="text-xl font-semibold mb-4">Borrow Book</h2>
-        <form onSubmit={handleSubmit}>
+        {
+          data?.data?.available ? (<form onSubmit={handleSubmit}>
           <div className="space-y-3">
             <div className="space-y-1">
               <Label htmlFor="quantity">Quantity</Label>
@@ -140,7 +141,8 @@ const BorrowBook = () => {
               {isActionLoading ? "Loading..." : "Borrow Book"}
             </Button>
           </div>
-        </form>
+        </form>): <p className="text-center py-10 text-red-500">Book not available at this moment</p>
+        }
       </div>
       <div className="border rounded-lg p-6 bg-card custom-shadow">
         <h2 className="text-xl font-semibold mb-4">Book information</h2>
