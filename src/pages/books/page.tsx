@@ -52,9 +52,11 @@ const Books = () => {
     console.log("Deleting book with ID:", selectedBookId);
 
     try {
-      const res = deleteBook(selectedBookId).unwrap();
+      const res = await deleteBook(selectedBookId).unwrap();
       console.log("Delete response:", res);
-      toast.success("Book deleted successfully");
+      if (res?.success) {
+        toast.success("Book deleted successfully");
+      }
     } finally {
       setIsOpen(false);
     }
@@ -220,7 +222,7 @@ const Books = () => {
         <ModalFooter className="p-4">
           <Button
             variant="outline"
-            className="px-3"
+            className="px-3 text-light-80"
             size="sm"
             onClick={() => setIsOpen(false)}
           >
